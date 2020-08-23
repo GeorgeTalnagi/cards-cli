@@ -12,7 +12,7 @@ SET_NAME = ["Basic", "Classic", "Hall of Fame", "Curse of Naxxramas", "Goblins v
         user_input = get_set_name
         result = api_call("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/", user_input)
         
-        #Lists card names and accepts user name for single card
+        #Lists card names and accepts user input for single card
         list_card_names(result)
         user_input = get_card_name(result)
         result = api_call("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/", user_input)
@@ -46,6 +46,7 @@ SET_NAME = ["Basic", "Classic", "Hall of Fame", "Curse of Naxxramas", "Goblins v
         end 
         if user_input.include?(" ")
             user_input = user_input.gsub! " ", '%2520'
+            
         end 
         user_input
     end 
